@@ -7,12 +7,13 @@ import { Roles } from '../enums/Roles';
 import { Color } from '../enums/Color';
 import { Comp2Component } from '../comp2/comp2.component';
 import { FormsModule } from '@angular/forms';
+import { NgModelComponent } from "../ng-model/ng-model.component";
 
 
 
 @Component({
   selector: 'app-comp1',
-  imports: [Comp2Component, FormsModule],
+  imports: [Comp2Component, FormsModule, NgModelComponent],
   templateUrl: './comp1.component.html',
   styleUrl: './comp1.component.css'
 })
