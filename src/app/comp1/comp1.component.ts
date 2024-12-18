@@ -1,10 +1,4 @@
 import { Component } from '@angular/core';
-
-import { User } from '../models/User';
-import { Customer } from '../models/Customer';
-import { UserI } from '../../interfaces/UserI';
-import { Roles } from '../enums/Roles';
-import { Color } from '../enums/Color';
 import { Comp2Component } from '../comp2/comp2.component';
 import { FormsModule } from '@angular/forms';
 import { NgModelComponent } from "../ng-model/ng-model.component";
@@ -26,6 +20,10 @@ export class Comp1Component {
 
   toggleIsHiglighted() {
     this.isHiglighted = !this.isHiglighted
+  }
+
+  greet(name: string): string {
+    return "Hello " + name;
   }
 
   ngOnInit() {

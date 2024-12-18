@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 
 @Component({
   selector: 'app-comp2',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './comp2.component.css'
 })
 export class Comp2Component {
+
+  @Input() message: string = ""
 
 }

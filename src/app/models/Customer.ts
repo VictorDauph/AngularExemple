@@ -2,6 +2,7 @@ export class Customer {
     name: string;
     adress: string;
     age: number;
+
     logCustomerInfos(): void {
         console.log(this.name + " " + this.age + " " + this.adress);
     }
