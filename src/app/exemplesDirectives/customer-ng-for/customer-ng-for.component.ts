@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Customer } from '../../models/Customer';
 import { CommonModule } from '@angular/common';
+import { CustomerCardNgForComponent } from "../customer-card-ng-for/customer-card-ng-for.component";
 
 @Component({
   selector: 'app-customer-ng-for',
-  imports: [CommonModule],
+  imports: [CommonModule, CustomerCardNgForComponent],
   templateUrl: './customer-ng-for.component.html',
   styleUrl: './customer-ng-for.component.css'
 })

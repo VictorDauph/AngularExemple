@@ -1,5 +1,10 @@
+<!--
 <div *ngFor="let customer of customerList">
     <h1>{{customer.name}}</h1>
     <p>{{customer.age}}</p>
     <p>{{customer.adress}}</p>
 </div>
+-->
+
+<app-customer-card-ng-for class="customerList" *ngFor="let customer of customerList" [customer]="customer">
+</app-customer-card-ng-for>
