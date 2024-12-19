@@ -16,4 +16,8 @@ export class SupplierListComponent {
     new Supplier(2, "Alicio", "ACGD", "0102030407")
   ]
 
+  ngOnInit() {
+    this.supplierList[0].setIsVerified(true)
+  }
+
 }

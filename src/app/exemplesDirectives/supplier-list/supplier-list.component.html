@@ -1,2 +1,4 @@
-<app-supplier-list-element *ngFor="let supplier of supplierList" [supplier]="supplier">
-</app-supplier-list-element>
+<div *ngFor="let supplier of supplierList">
+    <app-supplier-list-element [supplier]="supplier" *ngIf="supplier.getIsVerified()">
+    </app-supplier-list-element>
+</div>

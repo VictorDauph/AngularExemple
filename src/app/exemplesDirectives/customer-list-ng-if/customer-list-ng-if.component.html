@@ -1,0 +1,7 @@
+<p *ngIf="customerList.length<=0">La liste de customer est vide</p>
+<div *ngFor="let customer of customerList">
+    <article *ngIf="customer.age>36 && customer.age<55">
+        <p>{{customer.name}}</p>
+        <p>{{customer.age}}</p>
+    </article>
+</div>
