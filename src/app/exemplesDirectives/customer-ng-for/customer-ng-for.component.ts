@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Customer } from '../../models/Customer';
 import { CommonModule } from '@angular/common';
 import { CustomerCardNgForComponent } from "../customer-card-ng-for/customer-card-ng-for.component";
+import { CustomerDataService } from '../../services/customer-data.service';
 
 @Component({
   selector: 'app-customer-ng-for',
@@ -10,10 +11,9 @@ import { CustomerCardNgForComponent } from "../customer-card-ng-for/customer-car
   styleUrl: './customer-ng-for.component.css'
 })
 export class CustomerNgForComponent {
-  customerList: Customer[] = [
-    new Customer("Alice", "1 rue des rues", 25),
-    new Customer("Alicia", "2 rue des rues", 35),
-    new Customer("Alicio", "3 rue des rues", 50),
-    new Customer("Alicius", "4 rue des rues", 75)
-  ]
+  customerList!: Customer[]
+
+  constructor(private customerDataService: CustomerDataService) {
+    this.customerList = customerDataService.customerList
+  }
 }
