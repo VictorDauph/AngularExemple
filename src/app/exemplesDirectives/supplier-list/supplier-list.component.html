@@ -1,3 +1,4 @@
+<div *ngIf="supplierList.length<=0">supplier List vide</div>
 <div *ngFor="let supplier of supplierList">
     <app-supplier-list-element [supplier]="supplier" *ngIf="supplier.getIsVerified()">
     </app-supplier-list-element>

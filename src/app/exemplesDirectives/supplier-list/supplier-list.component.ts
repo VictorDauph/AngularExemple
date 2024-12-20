@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Supplier } from '../../models/Supplier';
 import { SupplierListElementComponent } from "../supplier-list-element/supplier-list-element.component";
 import { CommonModule } from '@angular/common';
+import { SupplierDataService } from '../../services/supplier-data.service';
 
 @Component({
   selector: 'app-supplier-list',
@@ -10,11 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './supplier-list.component.css'
 })
 export class SupplierListComponent {
-  supplierList: Supplier[] = [
-    new Supplier(0, "Alice", "Apple", "0102030405"),
-    new Supplier(1, "Alicia", "Microsoft", "0102030406"),
-    new Supplier(2, "Alicio", "ACGD", "0102030407")
-  ]
+  supplierList!: Supplier[]
+
+  constructor(private supplierDataService: SupplierDataService) {
+    this.supplierList = supplierDataService.supplierList;
+  }
 
   ngOnInit() {
     this.supplierList[0].setIsVerified(true)

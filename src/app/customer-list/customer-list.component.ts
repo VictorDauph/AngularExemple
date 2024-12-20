@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Customer } from '../models/Customer';
 import { CustomerDetailsComponent } from "../customer-details/customer-details.component";
+import { DataServiceService } from '../services/data-service.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,8 +10,14 @@ import { CustomerDetailsComponent } from "../customer-details/customer-details.c
   styleUrl: './customer-list.component.css'
 })
 export class CustomerListComponent {
-  customer1 = new Customer("Alice", "1 rue", 25)
-  customers: Array<Customer> = [this.customer1, new Customer("Alicia", "2 rue", 26), new Customer("Alicius", "3 rue", 27)]
+
+  customers!: Array<Customer>;
+
+  constructor(private dataService: DataServiceService) {
+    this.customers = this.dataService.customers
+  }
+
+
 
   handleClose(event: Event) {
     let childElement = event.currentTarget as HTMLElement
@@ -19,6 +26,7 @@ export class CustomerListComponent {
 
   ngOnInit() {
     console.log(this.customers[0])
+
   }
 
 }
