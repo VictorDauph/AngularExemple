@@ -14,19 +14,23 @@ export class CustomerListComponent {
   customers!: Array<Customer>;
 
   constructor(private dataService: DataServiceService) {
-    this.customers = this.dataService.customers
+    //behaviorSubject
+    this.dataService.customerBehave.subscribe(updatedList => {
+      this.customers = updatedList
+      console.log(this.customers)
+    })
+
   }
 
-
-
+  //eventBinding
   handleClose(event: Event) {
     let childElement = event.currentTarget as HTMLElement
     childElement.classList.add("closed")
   }
 
+  //behaviorSubject
   ngOnInit() {
-    console.log(this.customers[0])
-
+    this.dataService.addCustomer(new Customer("new Alice", "5rue des rues", 2500))
   }
 
 }
