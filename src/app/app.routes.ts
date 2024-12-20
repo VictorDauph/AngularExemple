@@ -6,6 +6,8 @@ import { CustomerNgForComponent } from './exemplesDirectives/customer-ng-for/cus
 import { SupplierListComponent } from './exemplesDirectives/supplier-list/supplier-list.component';
 import { CustomerListNgIfComponent } from './exemplesDirectives/customer-list-ng-if/customer-list-ng-if.component';
 import { ObservablesTestComponent } from './observablesExemples/observables-test/observables-test.component';
+import { HttpClientComponent } from './http-client/http-client.component';
+import { HttpUsersComponentComponent } from './http-users-component/http-users-component.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +39,14 @@ export const routes: Routes = [
     {
         path: 'observable-test',
         component: ObservablesTestComponent
+    },
+    {
+        path: 'http-client',
+        component: HttpClientComponent
+    },
+    {
+        path: 'http-client-users',
+        component: HttpUsersComponentComponent
     }
 
 ];

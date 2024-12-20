@@ -14,6 +14,7 @@ export class SupplierListComponent {
   supplierList!: Supplier[]
 
   constructor(private supplierDataService: SupplierDataService) {
+
     supplierDataService.supplierBehave.subscribe(updatedList => {
       this.supplierList = updatedList;
     })
