@@ -9,9 +9,12 @@ export class HttpClientUsersService {
 
   url = "https://jsonplaceholder.typicode.com/users"
 
+
   constructor(private httpClient: HttpClient) { }
 
   getUsers(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.url);
   }
+
+
 }

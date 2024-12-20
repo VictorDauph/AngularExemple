@@ -13,4 +13,8 @@ export class HttpServiceService {
   getPosts(): Observable<any> {
     return this.httpClient.get<any[]>(this.url)
   }
+
+  addPost(newPost: any): Observable<any> {
+    return this.httpClient.post<any>(this.url, newPost)
+  }
 }

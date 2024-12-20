@@ -21,5 +21,14 @@ export class HttpClientComponent {
         console.log(this.data);
       });
 
+
+    const newPost = { title: 'Nouveau Post', body: 'Contenu' };
+
+    this.httpService.addPost(newPost).subscribe(
+      data => {
+        console.log(data)
+      }
+    )
+
   }
 }
