@@ -14,11 +14,13 @@ export class SupplierListComponent {
   supplierList!: Supplier[]
 
   constructor(private supplierDataService: SupplierDataService) {
-    this.supplierList = supplierDataService.supplierList;
+    supplierDataService.supplierBehave.subscribe(updatedList => {
+      this.supplierList = updatedList;
+    })
   }
 
   ngOnInit() {
-    this.supplierList[0].setIsVerified(true)
+    this.supplierDataService.addSupplier(new Supplier(666, "new Alice", "Robocorp", "010203040506"))
+    console.log(this.supplierList)
   }
-
 }
