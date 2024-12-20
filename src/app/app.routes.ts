@@ -5,6 +5,7 @@ import { OutputParentComponent } from './output-parent/output-parent.component';
 import { CustomerNgForComponent } from './exemplesDirectives/customer-ng-for/customer-ng-for.component';
 import { SupplierListComponent } from './exemplesDirectives/supplier-list/supplier-list.component';
 import { CustomerListNgIfComponent } from './exemplesDirectives/customer-list-ng-if/customer-list-ng-if.component';
+import { ObservablesTestComponent } from './observablesExemples/observables-test/observables-test.component';
 
 export const routes: Routes = [
     {
@@ -32,6 +33,10 @@ export const routes: Routes = [
     {
         path: 'customer-ng-if',
         component: CustomerListNgIfComponent
+    },
+    {
+        path: 'observable-test',
+        component: ObservablesTestComponent
     }
 
 ];
